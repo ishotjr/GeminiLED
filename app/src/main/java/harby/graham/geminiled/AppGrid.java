@@ -1,4 +1,4 @@
-package harby.graham.geminiled;
+package com.ishotjr.geminiled;
 
 import android.content.Context;
 import android.content.Intent;

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeminiLED</string>
+    <string name="app_name">GeminiLEDx</string>
     <string name="cover_led_switch">Cover LEDs</string>
     <string name="keyboard_led_switch">Keyboard LED</string>
 

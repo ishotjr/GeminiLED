@@ -1,4 +1,4 @@
-package harby.graham.geminiled;
+package com.ishotjr.geminiled;
 
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.icu.util.Calendar;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.util.Log;
@@ -124,13 +125,22 @@ public class GeminiNotificationListener extends NotificationListenerService {
 
     void lightLEDs(){
         if(geminiLED.coverLEDsOn) {
-            for (Integer i : geminiLED.ledMap.keySet()) {
-                if (activeLEDList.contains(i)) {
-                    openLed(i, geminiLED.ledMap.get(i).getColour());
-                } else {
-                    openLed(i, new Colour(Colour.BLACK));
+
+            // cheap do-not-disturb
+            Calendar now = Calendar.getInstance();
+            int hour = now.get(Calendar.HOUR_OF_DAY);
+
+            if ((hour >= 8) && (hour < 23)) {
+
+                for (Integer i : geminiLED.ledMap.keySet()) {
+                    if (activeLEDList.contains(i)) {
+                        openLed(i, geminiLED.ledMap.get(i).getColour());
+                    } else {
+                        openLed(i, new Colour(Colour.BLACK));
+                    }
                 }
             }
+
         }
         else{
             blankLEDs();

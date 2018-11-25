@@ -1,4 +1,4 @@
-package harby.graham.geminiled;
+package com.ishotjr.geminiled;
 
 /**
  * The Colour class gives a representation of one 8 colours possible in the 3 bit colour range.

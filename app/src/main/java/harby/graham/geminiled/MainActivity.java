@@ -1,4 +1,4 @@
-package harby.graham.geminiled;
+package com.ishotjr.geminiled;
 
 import android.app.Dialog;
 import android.content.BroadcastReceiver;

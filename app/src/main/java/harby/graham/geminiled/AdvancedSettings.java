@@ -1,4 +1,4 @@
-package harby.graham.geminiled;
+package com.ishotjr.geminiled;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
